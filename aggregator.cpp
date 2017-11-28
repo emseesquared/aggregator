@@ -12,7 +12,9 @@ namespace json = rapidjson;
 
 namespace {
 template <typename Key, typename Value>
-std::vector<const Key*> getSortedKeyPtrs(const std::unordered_map<Key, Value>& map, std::function<bool(const Key&, const Key&)> comparator = std::less<Key>()) {
+std::vector<const Key*> 
+getSortedKeyPtrs(const std::unordered_map<Key, Value>& map, 
+		 std::function<bool(const Key&, const Key&)> comparator = std::less<Key>()) {
   std::vector<const Key*> result;
   result.reserve(map.size());
 
@@ -62,10 +64,10 @@ struct UintStrLess {
   }
 };
 
- // Well this is embarrassing...
-const std::array<std::string, 10> propNames = { "prop1", "prop2", "prop3", "prop4", "prop5", "prop6", "prop7", "prop8", "prop9", "prop10" };
-
-const unsigned secondsInADay =  60 * 60 * 24;
+const std::array<std::string, 10> propNames = { "prop1", "prop2", "prop3", "prop4", 
+						"prop5", "prop6", "prop7", "prop8", 
+						"prop9", "prop10" };
+const uint32_t secondsInADay =  60 * 60 * 24;
 
 }  // namespace
 
